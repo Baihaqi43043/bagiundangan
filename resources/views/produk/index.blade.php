@@ -1,5 +1,12 @@
 @extends('layouts.app')
+@push('custom-style')
+<style>
+    h1 {
+        color: tomato;
+    }
 
+</style>
+@endpush
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
