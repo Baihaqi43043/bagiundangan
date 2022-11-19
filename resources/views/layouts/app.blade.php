@@ -87,10 +87,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav nav-color ms-auto fw-normal">
-                        <li class="nav-item"><a class="active" href="" href="#">Home</a></li>
-                        <li class="nav-item ms-3" href="#"><a href="" href="#">Produk</a></li>
-                        <li class="nav-item ms-3" href="#"><a href="" href="#">Portofolio</a></li>
-                        <li class="nav-item ms-3" href="#"><a href="" href="#">Pesanan</a></li>
+                        <li class="nav-item"><a class="active" href="/">Home</a></li>
+                        <li class="nav-item ms-3" href="#"><a href="/produk">Produk</a></li>
+                        <li class="nav-item ms-3" href="#"><a href="">Portofolio</a></li>
+                        <li class="nav-item ms-3" href="#"><a href="#">Pesanan</a></li>
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
