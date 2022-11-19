@@ -20,7 +20,6 @@ class CreateHtransaksisTable extends Migration
             $table->foreign('customerID')->references('customerID')->on('mscustomers');
             $table->unsignedBigInteger('staffID');
             $table->foreign('staffID')->references('staffID')->on('msstaffs');
-
             $table->timestamps();
             $table->unique(['salesID', 'customerID']);
         });

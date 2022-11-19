@@ -1,3 +1,5 @@
+2022_11_05_114837_create_mscustomers_table
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -15,6 +17,7 @@ class CreateMscustomersTable extends Migration
     {
         if (!Schema::hasTable('mscustomers')) {
             Schema::create('mscustomers', function (Blueprint $table) {
+
                 $table->bigIncrements('customerID');
                 $table->string('customerNama', 100);
                 $table->string('customerAlamat', 150);

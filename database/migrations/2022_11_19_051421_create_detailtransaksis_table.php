@@ -19,6 +19,7 @@ class CreateDetailtransaksisTable extends Migration
             $table->unsignedBigInteger('produkID');
             $table->foreign('produkID')->references('produkID')->on('msproduks');
             $table->integer('quantity', 5);
+            $table->timestamps();
             $table->unique(['salesID', 'produkID']);
         });
     }
