@@ -15,7 +15,7 @@ class CreateMsstaffsTable extends Migration
     {
         if (!Schema::hasTable('mscustomers')) {
             Schema::create('msstaffs', function (Blueprint $table) {
-                $table->unsignedBigInteger('staffID');
+                $table->bigIncrements('staffID');
                 $table->string('staffNama', 100);
                 $table->string('staffPosisi', 15);
                 $table->string('staffAlamat', 150);

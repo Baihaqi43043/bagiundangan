@@ -15,7 +15,7 @@ class CreateMscustomersTable extends Migration
     {
         if (!Schema::hasTable('mscustomers')) {
             Schema::create('mscustomers', function (Blueprint $table) {
-                $table->unsignedBigInteger('customerID');
+                $table->bigIncrements('customerID');
                 $table->string('customerNama', 100);
                 $table->string('customerAlamat', 150);
                 $table->string('customerEmail', 50);
