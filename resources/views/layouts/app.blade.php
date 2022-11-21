@@ -67,7 +67,23 @@
         .btn-login:hover {
             background: #021B52;
         }
-
+        .btn2{
+            height: 45x;
+            width: 19%;
+            outline: none;
+            border: none;
+            background: rgb(52, 10, 206);
+            color: white;
+            font-weight: bold;
+            border-radius: 40px;
+        }
+        .main{
+            background: url(./img/gambar.png)no-repeat;
+            background-size: cover;
+            height: 100vh;
+            background-position: 50% 50%;
+            width:100%;
+        }
     </style>
 </head>
 
@@ -117,7 +133,7 @@
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                    document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
