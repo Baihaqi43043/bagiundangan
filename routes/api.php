@@ -15,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('mscustomers', [MscustomerController::class, 'index']);
-Route::post('mscustomers/store', [MscustomerController::class, 'store']);
-Route::get('mscustomers/{id}', [MscustomerController::class, 'show']);
-Route::post('mscustomers/update/{id}', [MscustomerController::class, 'update']);
+
+Route::resource('mscustomers', MscustomerController::class);
+// Route::get('mscustomers', [MscustomerController::class, 'index']);
+// Route::post('mscustomers/store', [MscustomerController::class, 'store']);
+// Route::get('mscustomers/{id}', [MscustomerController::class, 'show']);
+// Route::post('mscustomers/update/{id}', [MscustomerController::class, 'update']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

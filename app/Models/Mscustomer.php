@@ -9,14 +9,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Mscustomer extends Model
 {
     use HasFactory;
-    // use SoftDeletes;
-
-    // protected $fillable = [
-    //     'customerNama',
-    //     'customerAlamat'
-    // ];
-
-    // protected $table = 'mscustomers';
-    // protected $hidden = [];
-    protected $guarded;
+    public $primaryKey = 'customerID';
+    protected $fillable = [
+        'customerID', 'customerNama', 'customerAlamat', 'customerEmail', 'customerPhone'
+    ];
 }

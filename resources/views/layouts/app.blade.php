@@ -73,6 +73,7 @@
 
 <body>
     <div id="app">
+        @if(!(Request::is('login') || Request::is('register')))
         <nav class="navbar navbar-expand-md navbar-light bg-transparent shadow-sm">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="{{ url('/') }}">
@@ -131,7 +132,7 @@
                 </div>
             </div>
         </nav>
-
+        @endif
         <main class="py-4">
             @yield('content')
         </main>

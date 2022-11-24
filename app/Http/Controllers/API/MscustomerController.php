@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Mscustomer;
 use Exception;
 use Illuminate\Http\Request;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class MscustomerController extends Controller
 {
@@ -42,31 +43,31 @@ class MscustomerController extends Controller
      */
     public function store(Request $request)
     {
+        $validasi = $request->validate([
+            'customerNama' => 'required',
+            'customerAlamat' => 'required',
+            'customerEmail' => 'required',
+            'customerPhone' => 'required',
+
+        ]);
+
         try {
-            $request->validate([
-                'name' => 'require',
-                'alamat' => 'require',
-                'email' => 'require',
-                'phone' => 'require'
+            $reponse = Mscustomer::create($validasi);
+            return response()->json([
+                'success' => 200,
+                'messege' => 'success',
+                'data' => $reponse
             ]);
-            $customer = Mscustomer::create([
-                'customerNama' => $request->name,
-                'customerAlamat' => $request->alamat,
-                'customerEmail' => $request->email,
-                'customerPhone' => $request->phone,
+        } catch (\Exception $e) {
+            return response()->json([
+                'messege' => 'Err',
+                'eror' => $e->getMessage()
             ]);
-            if ($customer) {
-                return ApiFormatter::createApi(200, 'success', $customer);
-            } else {
-                return ApiFormatter::createApi(200, 'Failed');
-            }
-        } catch (Exception $error) {
-            return ApiFormatter::createApi(200, 'Failed');
         }
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource. 
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -101,27 +102,27 @@ class MscustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validasi = $request->validate([
+            'customerNama' => 'required',
+            'customerAlamat' => 'required',
+            'customerEmail' => 'required',
+            'customerPhone' => 'required',
+
+        ]);
+
         try {
-            $request->validate([
-                'name' => 'require',
-                'alamat' => 'require',
-                'email' => 'require',
-                'phone' => 'require'
+            $reponse = Mscustomer::find($id);
+            $reponse->update($validasi);
+            return response()->json([
+                'success' => 200,
+                'messege' => 'success',
+                'data' => $reponse
             ]);
-            $customer = Mscustomer::where('customerID', $id)->get();
-            $customer->update([
-                'customerNama' => $request->name,
-                'customerAlamat' => $request->alamat,
-                'customerEmail' => $request->email,
-                'customerPhone' => $request->phone,
+        } catch (\Exception $e) {
+            return response()->json([
+                'messege' => 'Err',
+                'eror' => $e->getMessage()
             ]);
-            if ($customer) {
-                return ApiFormatter::createApi(200, 'success', $customer);
-            } else {
-                return ApiFormatter::createApi(200, 'Failed');
-            }
-        } catch (Exception $error) {
-            return ApiFormatter::createApi(200, 'Failed');
         }
     }
 
@@ -133,6 +134,22 @@ class MscustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        return response()->json([
+            'messege' => 'halo gan'
+        ]);
+        // $customer = Mscustomer::findOrFail($id);
+        // try {
+        //     $customer->delete();
+        //     return response()->json([
+        //         'success' => 200,
+        //         'messege' => 'success',
+        //     ]);
+        // } catch (\Exception $e) {
+        //     return response()->json([
+        //         'messege' => 'Err',
+        //         'eror' => $e->getMessage()
+        //     ]);
+        // }
     }
 }
