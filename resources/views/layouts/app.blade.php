@@ -68,6 +68,10 @@
             background: #021B52;
         }
 
+        .navbar {
+            z-index: 3;
+        }
+
     </style>
 </head>
 

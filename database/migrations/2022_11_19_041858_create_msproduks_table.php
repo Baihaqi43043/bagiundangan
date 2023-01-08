@@ -16,6 +16,7 @@ class CreateMsproduksTable extends Migration
         Schema::create('msproduks', function (Blueprint $table) {
             $table->bigIncrements('produkID');
             $table->string('produkName', 200);
+            $table->string('file_path');
             $table->string('jenisProduk', 40);
             $table->string('demoProduk', 230);
             $table->timestamps();

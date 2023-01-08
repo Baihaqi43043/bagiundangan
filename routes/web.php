@@ -17,8 +17,13 @@ use App\Http\Controllers\ProdukController;
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/admin', function () {
+    return view('admin.index');
+});
 
 Route::get('/produk', [App\Http\Controllers\ProdukController::class, 'index'])->name('produk');
+
+Route::get('/admin/produk', [App\Http\Controllers\AdminController::class, 'index']);
 
 Auth::routes();
 
