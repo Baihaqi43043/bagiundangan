@@ -17,8 +17,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
 
         <!-- Icon Font Stylesheet -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
         <!-- Libraries Stylesheet -->
         <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
@@ -55,9 +58,9 @@
                             </div>
                         </div>
                         <div class="navbar-nav w-100">
-                            <a href="/admin" class="nav-item nav-link @yield('dass')"><i
+                            <a href="{{url('/admin')}}" class="nav-item nav-link @yield('dass')"><i
                                     class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                            <a href="admin/produk" class="nav-item nav-link @yield('produk')"><i class="fa fa-th me-2"></i>Produk</a>
+                            <a href="{{url('admin/produk')}}" class="nav-item nav-link @yield('produk')"><i class="fa fa-th me-2"></i>Produk</a>
                             <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                             <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                             <a href="chart.html" class="nav-item nav-link"><i

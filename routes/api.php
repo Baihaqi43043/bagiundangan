@@ -16,8 +16,6 @@ use App\Models\Msproduk;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-
 Route::resource('mscustomers', MscustomerController::class)->middleware(['auth:sanctum']);
 Route::resource('Msproducts', MsproductController::class);
 Route::post('/Msproducts', [MsproductController::class, 'update']);

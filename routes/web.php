@@ -25,6 +25,16 @@ Route::get('/produk', [App\Http\Controllers\ProdukController::class, 'index'])->
 
 Route::get('/admin/produk', [App\Http\Controllers\AdminController::class, 'index']);
 
+Route::get('/tambahproduk', [App\Http\Controllers\AdminController::class, 'createproduk']);
+
+Route::post('/produk/create', [App\Http\Controllers\AdminController::class, 'storeproduk']);
+
+Route::get('/edit/{id}/editproduk', [App\Http\Controllers\AdminController::class, 'edit']);
+
+Route::post('/produkedit/{id}', [App\Http\Controllers\AdminController::class, 'produkedit']);
+
+Route::get('/produk/{id}/hapus', [App\Http\Controllers\AdminController::class, 'destroy']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
